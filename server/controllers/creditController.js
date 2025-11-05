@@ -1,5 +1,6 @@
 import Transaction from "../models/Transaction.js"
 import Stripe from "stripe"
+import User from "../models/User.js"
 
 const plans = [
     {
@@ -49,23 +50,31 @@ export const purchasePlan = async (req, res) => {
 
         // Create new Transaction
         const transaction = await Transaction.create({
-            userId: userId,
+            userId,
             planId: plan._id,
             amount: plan.price,
             credits: plan.credits,
             isPaid: false
         })
 
+        // Update credits in user account (without verification)
+        await User.updateOne(
+            { _id: transaction.userId },
+            { $inc: { credits: transaction.credits } }
+        );
+        transaction.isPaid = true;
+        await transaction.save();
+
         const { origin } = req.headers
+        
         const session = await stripe.checkout.sessions.create({            
             line_items: [
                 {
                 price_data: {
-                    currency: "sgd",
+                    currency: "usd",
                     unit_amount: plan.price * 100,
                     product_data: {
-                        name: plan.name,
-
+                        name: plan.name
                     }
                 },
                 quantity: 1,
@@ -78,8 +87,8 @@ export const purchasePlan = async (req, res) => {
             expires_at: Math.floor(Date.now() / 1000) + 30 * 60, // Expires in 30 Minutes
         });
 
-        res.json({succes: true, url: session.url})
+        res.json({success: true, url: session.url})
     } catch (error) {
-        res.json({success: false, message: error.message})
+        res.json({ success: false, message: error.message })
     }
-}
+}   

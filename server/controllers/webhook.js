@@ -3,33 +3,39 @@ import Transaction from '../models/Transaction.js';
 import User from '../models/User.js';
 
 export const stripeWebhooks = async (req, res) => {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
-    const sig = request.headers['stripe-signature']
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+    const sig = req.headers['stripe-signature'];
 
     let event;
 
     try {
-        event = stripe.webhooks.constructEvent(request.body, sig, process.env.STRIPE_WEBHOOK_SECRET)
+        event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET)
     } catch (error) {
         return res.status(400).send(`Webhook Error: ${error.message}`)
     }
 
     try {
         switch (event.type) {
-            case "payment_intent.succeeded":{
+            case "payment_intent.succeeded": {
                 const paymentIntent = event.data.object;
                 const sessionList = await stripe.checkout.sessions.list({
-                    payment_intent: paymentIntent.id,
-                })
+                payment_intent: paymentIntent.id,
+                });
 
                 const session = sessionList.data[0];
-                const {transactionId, appId} = session.metadata;
+                const { transactionId, appId } = session.metadata;
 
                 if(appId === 'gaia'){
-                    const transaction = await Transaction.findOne({_id: transactionId, isPaid: false})
+                    const transaction = await Transaction.findOne({
+                        _id: transactionId,
+                        isPaid: false,
+                    });
                     
                     // Update credits in user account
-                    await User.updateOne({_id: transaction.userId}, {$inc: {credits: transaction.credits}})
+                    await User.updateOne(
+                        { _id: transaction.userId },
+                        { $inc: { credits: transaction.credits } }
+                    );
 
                     // Update credit Payment Status
                     transaction.isPaid = true;
@@ -47,6 +53,6 @@ export const stripeWebhooks = async (req, res) => {
         res.json({received: true})
     } catch (error) {
         console.error("Webhook processing error:", error)
-        response.status(500).send("Internal Server Error")
+        res.status(500).send("Internal Server Error")
     }
 }

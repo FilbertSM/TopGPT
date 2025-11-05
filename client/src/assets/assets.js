@@ -1,6 +1,10 @@
 import logo from "./logo.svg";
 import logo_full from "./logo_full.svg";
 import logo_full_dark from "./logo_full_dark.svg";
+import title_logo from "./title_logo.svg";
+import title_logo_dark from "./title_logo_dark.svg";
+import menu_iconh from "./menu_iconh.svg";
+import menu_icon_darkh from "./menu_icon_darkh.svg";
 import search_icon from "./search_icon.svg";
 import user_icon from "./user_icon.svg";
 import theme_icon from "./theme_icon.svg";
@@ -13,6 +17,16 @@ import bin_icon from "./bin_icon.svg";
 import logout_icon from "./logout_icon.svg";
 import diamond_icon from "./diamond_icon.svg";
 import gallery_icon from "./gallery_icon.svg";
+import sun_icon from "./sun_icon.svg";
+import moon_icon from "./moon_icon.svg";
+import person_icon from "./person_icon.svg";
+import email_icon from "./email_icon.svg";
+import arrow_icon from "./arrow_icon.svg";
+import github_icon from "./github_icon.svg";
+import linkedin_icon from "./linkedin_icon.svg";
+import instagram_icon from "./instagram_icon.svg";
+import hero_img from "./hero_img.png";
+import hero_profile_img from "./hero_profile_img.png";
 
 import ai_image1 from "./ai_image1.jpg";
 import ai_image2 from "./ai_image2.jpg";
@@ -30,6 +44,8 @@ import ai_image12 from "./ai_image12.jpg";
 export const assets = {
     logo,
     logo_full,
+    title_logo,
+    title_logo_dark,
     search_icon,
     user_icon,
     theme_icon,
@@ -37,12 +53,24 @@ export const assets = {
     stop_icon,
     mountain_img,
     menu_icon,
+    menu_iconh,
+    menu_icon_darkh,
     close_icon,
     bin_icon,
     logout_icon,
     logo_full_dark,
     diamond_icon,
-    gallery_icon
+    gallery_icon,
+    sun_icon,
+    moon_icon,
+    person_icon,
+    email_icon,
+    arrow_icon,
+    github_icon,
+    linkedin_icon,
+    instagram_icon,
+    hero_img,
+    hero_profile_img
 };
 
 export const dummyUserData = {

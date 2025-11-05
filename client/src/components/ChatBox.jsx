@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useAppContext } from '../context/AppContext'
 import { assets } from '../assets/assets'
 import Message from './Message';
+import toast from 'react-hot-toast';
 
 const ChatBox = () => {
 
     const containerRef = useRef(null);
 
-    const {selectedChat, theme} = useAppContext();
+    const {selectedChat, theme, user, axios, token, setUser} = useAppContext();
 
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -18,6 +19,33 @@ const ChatBox = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+        try {
+            if(!user) return toast.message('Login to send message')
+                setLoading(true)
+                const promptCopy = prompt
+                setPrompt('')
+                setMessages(prev => [...prev, {role: 'user', content: prompt, timestamp: Date.now(), isImage: false}])
+
+                const { data } = await axios.post(`/api/message/${mode}`, {chatId: selectedChat._id, prompt, isPublished}, {headers: { Authorization: token } })
+
+                if(data.success){
+                    setMessages(prev => [...prev, data.reply])
+                    // Subtract Credit
+                    if(mode === 'image'){
+                        setUser(prev => ({...prev, credits: prev.credits - 2}))
+                    } else {
+                        setUser(prev => ({...prev, credits: prev.credits - 1}))
+                    }
+                } else {
+                    toast.error(data.message)
+                    setPrompt(promptCopy)
+                }
+        } catch (error) {
+            toast.error(error.message)
+        } finally {
+            setPrompt('')
+            setLoading(false)
+        }
     }
 
     useEffect(()=>{
@@ -36,7 +64,7 @@ const ChatBox = () => {
     },[messages])
 
     return (
-        <div className='flex-1 flex flex-col justify-between m-5 md:m-10 xl:mx-30 max-md:mt-14 2xl:pr-40'>
+        <div className='flex-1 flex flex-col justify-between m-5 md:mx-10 md:mt-10 md:mb-5 xl:mx-30 max-md:mt-14 2xl:pr-40'>
 
             {/* Chat Messages */}
             <div ref={containerRef} className='flex-1 mb-5 overflow-y-scroll'>
@@ -65,16 +93,28 @@ const ChatBox = () => {
             )}
 
             {/* Prompt Input Box */}
-            <form onSubmit={onSubmit} className='bg-primary/20 dark:bg-[#583C79]/30 border border-primary dark:border-[#80609F]/30 rounded-full w-full max-w-2xl p-3 pl-4 mx-auto flex gap-4 items-center'>
+            <form onSubmit={onSubmit} className='bg-primary/20 dark:bg-[#4A3728]/30 border border-primary dark:border-[#A68767]/30 rounded-full w-full max-w-2xl p-3 pl-4 mx-auto flex gap-4 items-center'>
                 <select onChange={(e)=>setMode(e.target.value)} value={mode} className='text-sm pl-3 pr-2 outline-none'>
-                    <option className='dark:bg-purple-900' value="text">Text</option>
-                    <option className='dark:bg-purple-900' value="image">Image</option>
+                    <option className='dark:bg-[#4A3728]' value="text">Text</option>
+                    <option className='dark:bg-[#4A3728]' value="image">Image</option>
                 </select>
                 <input onChange={(e)=>setPrompt(e.target.value)} value={prompt} type="text" placeholder='Type your prompt here...' className='flex-1 w-full text-sm outline-none' required/>
                 <button disabled={loading}>
                     <img src={loading ? assets.stop_icon : assets.send_icon} className='w-8 cursor-pointer'/>
                 </button>
             </form>
+
+            {/* Author */}
+            <div className='w-full flex justify-center gap-3 mt-3'>
+                <a href="" target='_blank' rel='noopener noreferrer' className='text-sm font-medium text-gray-800 dark:text-white hover:text-stone-200'>&copy; Filbert Sembiring Meliala</a>
+                <div className='h-2 border-r-[1px] border-border-medium mt-1.5'></div>
+                <a href="https://linkedin.com/in/filbert-sembiring-meliala/" target='_blank' rel='noopener noreferrer' className='text-sm font-medium text-gray-800 dark:text-white hover:text-stone-200 underline'>LinkedIn</a>
+                <div className='h-2 border-r-[1px] border-border-medium mt-1.5'></div>
+                <a href="https://github.com/FilbertSM" target='_blank' rel='noopener noreferrer' className='text-sm font-medium text-gray-800 dark:text-white hover:text-stone-200 underline'>GitHub</a>
+                <div className='h-2 border-r-[1px] border-border-medium mt-1.5'></div>
+                <a href="https://filbertsm.vercel.app/" target='_blank' rel='noopener noreferrer' className='text-sm font-medium text-gray-800 dark:text-white hover:text-stone-200 underline'>Portfolio</a>
+                
+            </div>
 
         </div>
     )
