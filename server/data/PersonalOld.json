@@ -1,0 +1,122 @@
+{
+  "name": "Filbert Sembiring Meliala",
+  "headline": "Vice Chairperson of PUMA Informatics 2025 | Mentor of Website and Apps Developer Team Intern at Setsail BizAccel 2024 | Undergraduate Artificial Intelligence Student at President University",
+  "about": "I'm an Informatics student at President University driven to solve complex problems through AI, Computer Vision and NLP. I've built Computer Vision systems to enhance safety monitoring and developed NLP models for sentiment analysis achieving high accuracy with Python, TensorFlow, and NLTK. My web development experience includes creating user-friendly applications. Beyond coding, I've led impactful initiatives, organizing events that connected hundreds of students with industry professionals, and served as Vice Chairperson, guiding teams to execute impactful programs. These experiences sharpened my leadership, teamwork, and project management skills. I'm eager to contribute to innovative AI and web development projects as an intern or entry-level professional. Let's connect to explore opportunities in AI, NLP, or web development!",
+
+  "education": [
+    {
+      "institution": "President University",
+      "degree": "Bachelor of Information Technology",
+      "location": "Cikarang, Indonesia",
+      "startYear": 2023,
+      "endYear": "Present",
+      "gpa": 3.97,
+      "relevantCourses": [
+        "Data Structures & Algorithms",
+        "Web Application Development",
+        "Artificial Intelligence",
+        "Database Systems"
+      ]
+    },
+    {
+      "institution": "Korean-ASEAN Digital Academy",
+      "degree": "Bootcamp",
+      "location": "Cikarang, Indonesia",
+      "period": "June 2025 - August 2025",
+      "relevantCourses": [
+        "Ethics and Security",
+        "Web Development",
+        "Backend Development",
+        "Cloud Services",
+        "Data Analysis",
+        "DevOps",
+        "Artificial Intelligence",
+        "UI/UX"
+      ]
+    },
+    {
+      "institution": "SMA Negeri 1 Balikpapan",
+      "degree": "Senior High School",
+      "location": "Balikpapan, Indonesia",
+      "startYear": 2020,
+      "endYear": 2023,
+      "gpa": 88.05,
+      "relevantCourses": [
+        "Data Structures & Algorithms",
+        "Web Application Development",
+        "Artificial Intelligence",
+        "Database Systems"
+      ]
+    }
+  ],
+
+  "skills": {
+    "programmingLanguages": ["Python", "JavaScript", "Java", "C++", "PHP", "SQL", "Arduino IDE"],
+    "artificialIntelligence": ["Machine Learning", "Deep Learning", "Convolutional Neural Network (CNN)", "Recurrent Neural Network (RNN)", "Natural Language Processing (NLP)", "Computer Vision"],
+    "AIFrameworks":["TensorFlow", "PyTorch", "Hugging Face", "OpenCV", "NLTK", "Scikit-learn"],
+    "webDevelopment": {
+        "frontend": ["React.js", "Next.js", "Vite", "HTML", "CSS", "Tailwind", "Zoho"],
+        "backend": ["Node.js", "Express.js", "Laravel", "FastAPI"],
+        "database": ["MongoDB", "MySQL", "Firebase", "Pincecone", "Vector Database"]
+    },    
+    "tools": ["Git","GitHub", "Docker", "Postman", "Visual Studio Code", "Jupyter Notebook", "Google Colab", "Android Studio", "Notion", "Trello", "Microsoft 365"],
+    "softSkills": ["Leadership", "Project Management", "Communication", "Teamwork", "Event Organizer", "Critical Thinking", "Public Speaking"]
+  },
+
+  "projects": [
+    {
+      "title": "Project Name",
+      "description": "Brief explanation about the project's purpose and what it solves.",
+      "techStack": ["React", "Node.js", "MongoDB"],
+      "role": "Frontend Developer",
+      "features": [
+        "User authentication",
+        "Real-time messaging",
+        "Cloud storage integration"
+      ],
+      "githubLink": "https://github.com/username/project",
+      "liveDemo": "https://project-demo.com"
+    }
+  ],
+
+  "experience": [
+    {
+      "organization": "Company or Organization Name",
+      "role": "Position (e.g., Web Developer Intern)",
+      "startDate": "2024-05",
+      "endDate": "2024-08",
+      "achievements": [
+        "Improved website performance by 35%",
+        "Developed internal dashboard for team reporting"
+      ],
+      "techUsed": ["React", "Node.js", "REST APIs"]
+    }
+  ],
+
+  "certifications": [
+    {
+      "title": "Certification Name",
+      "issuer": "Issuing Organization",
+      "year": 2024,
+      "credentialID": "XXXX-XXXX",
+      "verificationLink": "https://verify-certification.com"
+    }
+  ],
+
+  "achievementsAwards": [
+    {
+      "title": "Award or Competition Name",
+      "issuer": "Organizer",
+      "year": 2023,
+      "description": "Short description about the competition/achievement."
+    }
+  ],
+
+  "contact": {
+    "email": "email@example.com",
+    "phone": "+62-812-3456-7890",
+    "linkedIn": "https://linkedin.com/in/username",
+    "github": "https://github.com/username",
+    "website": "https://portfolio.com"
+  }
+}

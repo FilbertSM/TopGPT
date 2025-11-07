@@ -1,0 +1,269 @@
+{
+  "name": "Filbert Sembiring Meliala",
+  "headline": "Informatics Student specializing in Artificial Intelligence and Full-Stack Development",
+  "about": "Motivated Informatics student with strong foundations in AI, Computer Vision, and NLP. Demonstrated leadership experience as Vice Chairperson of PUMA Informatics, leading impactful tech initiatives and large-scale student engagement. Passionate about building meaningful products and driving innovation through collaboration and continuous learning.",
+
+  "education": [
+    {
+      "institution": "President University",
+      "degree": "Bachelor of Informatics",
+      "location": "Bekasi, Indonesia",
+      "startYear": 2023,    
+      "endYear": 2026,
+      "gpa": 3.97,
+      "concentration": "Artificial Intelligence"
+    },
+    {
+      "institution": "Korea-ASEAN Digital Academy",
+      "degree": "Digital Skills & Technology Program",
+      "period": "June 2025 - August 2025",
+      "relevantCourses": [
+        "Ethics and Security",
+        "Web Development",
+        "Backend Engineering",
+        "Cloud Service",
+        "DevOps",
+        "Data Analysis",
+        "UI/UX"
+      ]
+    },
+    {
+      "institution": "SMA Negeri 1 Balikpapan",
+      "degree": "Senior High School",
+      "location": "Balikpapan, Indonesia",
+      "startYear": 2020,
+      "endYear": 2023,
+      "gpa": 88.05,
+      "concentration": "Mathematical and Science Concentration"
+    }
+  ],
+
+  "skills": {
+    "programmingLanguages": ["Python", "JavaScript", "Java", "C++", "PHP", "SQL", "Arduino IDE"],
+    "artificialIntelligence": ["Machine Learning", "Deep Learning", "Convolutional Neural Network (CNN)", "Recurrent Neural Network (RNN)", "Natural Language Processing (NLP)", "Computer Vision"],
+    "AIFrameworks":["TensorFlow", "PyTorch", "Hugging Face", "OpenCV", "NLTK", "Scikit-learn"],
+    "webDevelopment": {
+        "frontend": ["React.js", "Next.js", "Vite", "HTML", "CSS", "Tailwind", "Zoho"],
+        "backend": ["Node.js", "Express.js", "Laravel", "FastAPI"],
+        "database": ["MongoDB", "MySQL", "Firebase", "Pincecone", "Vector Database"]
+    },    
+    "tools": ["Git","GitHub", "Docker", "Postman", "Visual Studio Code", "Jupyter Notebook", "Google Colab", "Android Studio", "Notion", "Trello", "Microsoft 365"],
+    "softSkills": ["Leadership", "Project Management", "Communication", "Teamwork", "Event Organizer", "Critical Thinking", "Public Speaking", "Collaboration"]
+  },
+
+  "projects": [
+    {
+      "title": "YouTube Coding Guide - Full-Stack Web Application",
+      "description": "A modern platform providing categorized programming tutorials for students, featuring responsive UI and CRUD content management.",
+      "techStack": ["React", "TypeScript", "Tailwind CSS", "shadcn-ui", "Node.js", "Express.js"],
+      "role": "Fullstack Web Developer",
+      "gitrepo": "https://github.com/FilbertSM/Youtube-Coding-Website.git",
+      "url": "",
+      "doc": ""
+    },
+    {
+      "title": "Sentiment Analysis Tool for Social Media (AICO)",
+      "description": "Full-stack dashboard that performs sentiment analysis on TikTok & Instagram posts using machine learning.",
+      "techStack": ["React", "TypeScript", "Vite", "FastAPI", "Python", "Scikit-learn"],
+      "role": "Fullstack Developer & AI Engineer",
+      "gitrepo": "",
+      "url": "",
+      "doc": ""
+    },
+    {
+      "title": "MedBot - Intelligent Medical QA System",
+      "description": "NLP model fine-tuning project using BioBERT and RoBERTa for medical question answering, achieving 81.55% F1-score.",
+      "techStack": ["Python", "PyTorch", "Transformers", "BioASQ Dataset"],
+      "role": "Machine Learning Engineer",
+      "gitrepo": "",
+      "url": "",
+      "doc": ""
+    },
+    {
+      "title": "Child Emotional Detection System",
+      "description": "Computer vision system for children’s emotional state assessment using CNN and OpenCV.",
+      "techStack": ["Python", "TensorFlow", "OpenCV", "CNN"],
+      "role": "AI Engineer & Data Scientist",
+      "gitrepo": "",
+      "url": "",
+      "doc": ""
+    }
+  ],
+
+  "experience": [
+      {
+        "type": "Mentoring",
+        "organization": "Mentor of Workshop Pand.AI by AICO",
+        "role": "Mentor",
+        "startDate": "2025-03",
+        "endDate": "2025-03",
+        "description": "The 'Pand.AI' workshop, hosted by the Artificial Intelligence Community Indonesia (AICO), was an educational event aimed at introducing students to practical applications of creative AI tools.",
+        "tags": ["Coaching & Mentoring", "Mentoring", "Teaching", "Public Speaking"],        
+        "achievements": [
+          "Trained 200+ students on AI video/image generation tools.",
+          "Increased participant proficiency by hands-on practical training."
+        ]
+      },
+      {
+        "type": "Internship",
+        "organization": "Setsail BizAccel",
+        "role": "PIC Mentor of Web Development",
+        "startDate": "2024-10",
+        "endDate": "2025-05",
+        "description": "Setsail BizAccel is a business accelerator program at President University designed to support and nurture student entrepreneurs. The program provides resources, mentorship, and events like the 'Founders Weekend' to help aspiring founders develop their business ideas...",
+        "tags": ["Coaching & Mentoring", "Web Development"],        
+        "achievements": [
+          "Mentored 6 members in web development practices.",
+          "Oversaw website deployment and performance quality."
+        ]
+      },
+      {
+        "type": "Organization",
+        "organization": "PUMA Informatics",
+        "role": "Vice Chairperson",
+        "startDate": "2024-07",
+        "endDate": "2025-10",
+        "description": "PUMA Informatics, the President University Major Association of Informatics, regularly hosts a variety of initiatives including technical workshops, seminars, programming competitions, and community-building activities. These events are designed to provide Informatics students with practical skills, industry insights, networking opportunities, and a platform to showcase their talents, thereby enriching their academic and professional development.",
+        "tags": ["Leadership", "Teamwork", "IT Strategy", "Communication", "Public Speaking"],        
+        "achievements": [
+          "Led a 59-member organization executing campus-wide events.",
+          "Increased student participation by 30% through structured strategic planning."
+        ]
+      },
+      {
+        "type": "Event",
+        "organization": "TechX - Technology Exploration Event",
+        "role": "Vice Project Manager",
+        "startDate": "2023-11",
+        "endDate": "2024-10",
+        "description": "TechX 2024, organized by PUMA Informatics at President University, was a large-scale event designed to promote innovative technology exploration among students. It featured engaging seminars and a variety of competitions, including Business Plan development, UI/UX design challenges, and a Battle of Logic, providing a platform for university and high school students to learn, compete, and network.",
+        "tags": ["Leadership", "Project Management", "Event Management", "Decision Making"],        
+        "achievements": [
+          "Led an 80-member committee organizing seminars and competitions for 200+ participants.",
+          "Improved operational efficiency by 15% through optimized workflows."
+        ]
+      },
+      {
+        "type": "Event",
+        "organization": "Temu Alumni 2024",
+        "role": "Event Organizer",
+        "startDate": "2024-02",
+        "endDate": "2024-06",
+        "description": "Temu Alumni 2024 was an alumni networking event organized by PUMA Informatics for President University students and alumni. The event aimed to foster connections, facilitate knowledge sharing on current IT career trends, and provide professional development opportunities for over 100 attendees.",
+        "tags": ["Event Organization", "Event Planning", "Public Speaking"],        
+        "achievements": [
+          "Managed event logistics for “Temu Alumni 2024”, coordinating schedules and ensuring smooth, on-time execution for a networking event with 100+ attendees.",
+          "Facilitated student–alumni discussions on IT career trends, helping bridge academic and industry insights to support student professional growth"
+        ]
+      },
+      {
+        "type": "Event",
+        "organization": "Company Visit at ITBCA",
+        "role": "Event Organizer",
+        "startDate": "2024-03",
+        "endDate": "2024-04",
+        "description": "This event was a company visit organized by PUMA Informatics for Computer Science students of President University. The visit provided over 60 students with an opportunity to gain firsthand insights into the operations, technological infrastructure, and professional environment at ITBCA, a prominent IT institution.",
+        "tags": ["Event Organization", "Event Planning", "Public Speaking"],        
+        "achievements": [
+          "Orchestrated a company visit to ITBCA for 60+ Computer Science students, managing logistics including venue coordination, transportation, and communication with ITBCA representatives.",
+          "Designed a comprehensive event schedule and presentation to enhance participants’ understanding of ITBCA’s operations and work culture."
+        ]
+      },
+      {
+        "type": "Event",
+        "organization": "Comparative Study with HIMATIF UNPAD",
+        "role": "PIC Fund and Consume",
+        "startDate": "2023-12",
+        "endDate": "2024-03",
+        "description": "This event was a comparative study tour organized by PUMA Informatics, President University, in collaboration with HIMATIF Universitas Padjadjaran. The primary aim was to facilitate knowledge exchange, share best practices in student association management, and explore different academic environments for 37 student participants.",
+        "tags": ["PIC", "Fundraising", "Fund Management"],
+        
+        "achievements": [
+          "Managed fundraising and consumption logistics for a comparative study tour to Universitas Padjadjaran with 37 participants from PUMA Informatics.",
+          "Successfully raised IDR 3,700,000 through sales initiatives and oversaw meal and material allocations to ensure efficient and smooth event execution."
+        ]
+      },
+      {
+        "type": "Event",
+        "organization": "GEMASTIK 2024",
+        "role": "PIC Programming Concept",
+        "startDate": "2024-01",
+        "endDate": "2024-10",
+        "description": "This initiative was a focused internal mentoring program designed by the President University Faculty Association of Computer Science (PUFA) to prepare students for GEMASTIK, a prestigious national multi-branch ICT competition in Indonesia. The program specifically aided over 20 participants in the Programming Concept category, enhancing their skills and readiness for the competition.",
+        "tags": ["Public Relations", "Time Management"],
+        
+        "achievements": [
+          "Organized and managed the internal mentoring program for 20+ students competing in the GEMASTIK national competition (Programming Concept category) under PUFA Computer Science.",
+          "Provided guidance, structure, and coordination to enhance participants’ preparation and performance in the competition."
+        ]
+      },
+      {
+        "type": "Event",
+        "organization": "Social Project Sekolah Kami: Nebula Knights",
+        "role": "Project Manager",
+        "startDate": "2024-06",
+        "endDate": "2024-07",
+        "description": "Sekolah Kami by Nebula Knights was a targeted social project focused on improving educational outcomes for underprivileged children. The initiative delivered direct educational support, essential resources, and skill-development workshops. Its core mission was to bridge educational gaps and provide sustainable learning opportunities within the West Bekasi community.",
+        "tags": ["Leadership", "Project Management", "Teamwork", "Communication", "Strategic Partnership"],
+        
+        "achievements": [
+          "Led a team initiative to deliver educational support and resources to 20+ underprivileged children, improving their access to quality learning opportunities.",
+          "Built local partnerships and developed progress-monitoring frameworks, expanding educational workshops in West Bekasi to address community-specific needs and ensure sustainable impact."
+        ]
+      },
+      {
+        "type": "Event",
+        "organization": "Business Month 2024",
+        "role": "Event Organizer",
+        "startDate": "2024-05",
+        "endDate": "2024-07",
+        "description": "Busmonth 2024 was a business seminar organized by the President University Faculty Association of Business (PUFA Business). The event catered to over 50 attendees and featured invited speakers who shared insights on current business trends, aiming to foster student awareness of various career opportunities in the business field",
+        "tags": ["Event Organization", "Event Planning", "Public Speaking"],
+        
+        "achievements": [
+          "Coordinated planning and logistics for Busmonth 2024, a business seminar attended by 50+ participants, ensuring smooth event flow through effective scheduling and timeline management.",
+          "Liaised with speakers to deliver insightful sessions on current business trends, enhancing participant engagement and learning outcomes."
+        ]
+      },
+      {
+        "type": "Organization",
+        "organization": "Vice of Division Research and Technology of PUMA Informatics 2024",
+        "role": "Vice of Division",
+        "startDate": "2023-10",
+        "endDate": "2024-10",
+        "description": "This flagship annual event by PUMA Informatics serves as a cornerstone for students in the major. It combines a challenging competition (details of competition type can be added if known, e.g., coding, UI/UX) with an insightful seminar featuring industry professionals or academic experts. The event aims to foster innovation, practical skills, and knowledge sharing among over 200 student participants.",
+        "tags": ["Web Development", "Event Management"],
+        
+        "achievements": [
+          "Organized the largest annual event for the Informatics major, featuring a competition and seminar that successfully attracted 200+ participants and strengthened community engagement.",
+          "Spearheaded the development of the organization’s website using TypeScript, enhancing user experience, accessibility, and overall digital presence."
+        ]
+      }
+  ],
+
+  "achievementsAwards": [
+    {
+      "title": "1st Place Winner - Golden Code Hackathon",
+      "issuer": "President University",
+      "year": 2025
+    },
+    {
+      "title": "3rd Place Winner - Founders Weekend Setsail",
+      "issuer": "President University Setsail BizAccel",
+      "year": 2024
+    },
+    {
+      "title": "3rd Place Winner - International Hackathon (BeachHacks)",
+      "issuer": "Chung Ang University",
+      "year": 2024
+    }
+  ],
+
+  "contact": {
+    "email": "filbertsm7@gmail.com",
+    "phone": "+62-895-6143-18228",
+    "linkedIn": "https://linkedin.com/in/filbert-sembiring-meliala",
+    "github": "https://github.com/FilbertSM",
+    "website": "https://filbertsm.vercel.app"
+  }
+}
