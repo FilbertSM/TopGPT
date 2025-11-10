@@ -1,0 +1,35 @@
+{
+	"name": "TopGPT",
+	"description": "TopGPT is an AI-powered chat platform designed to provide users with intelligent, context-aware assistance and creative image generation.",
+	"features": [
+		{
+			"title": "AI Chat Assistant",
+			"details": "Users can interact with a knowledgeable AI assistant that leverages reference data about Filbert Sembiring Meliala. The assistant responds to questions about Filbert with factual, concise information, and can also answer general queries as a helpful assistant."
+		},
+		{
+			"title": "Retrieval-Augmented Generation (RAG)",
+			"details": "For broader conversations, the platform offers a RAG-based chat mode, enabling more flexible and dynamic responses using state-of-the-art AI models."
+		},
+		{
+			"title": "AI Image Generation",
+			"details": "Users can generate images from text prompts using integrated AI image generation. The system uploads generated images to the ImageKit media library and provides shareable links."
+		},
+		{
+			"title": "Credit System",
+			"details": "Usage of AI features is managed via a credit system, ensuring fair access and resource management."
+		}
+	],
+	"technologyStack": {
+		"backend": "Node.js, Express.js",
+		"aiModels": "Gemini 2.5 Flash (via OpenAI API)",
+		"imageGeneration": "ImageKit AI",
+		"database": "MongoDB (for chat and user management)",
+		"authentication": "User-based credit tracking"
+	},
+	"exampleUseCases": [
+		"Ask for a profile summary of Filbert Sembiring Meliala.",
+		"Get answers to personal or general questions.",
+		"Generate creative images from text prompts.",
+		"Manage and track usage with a credit system."
+	]
+}

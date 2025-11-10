@@ -4,6 +4,7 @@ import User from "../models/User.js"
 import imagekit from "../configs/imageKit.js"
 import openai from "../configs/openai.js"
 import personal from "../data/Personal.json" with { type: "json" }
+import websiteDescription from "../data/WebsiteDescription.json" with { type: "json" }
 
 // Text-based AI Chat Message Controller
 export const textMessageController = async (req, res) => {
@@ -20,19 +21,25 @@ export const textMessageController = async (req, res) => {
 
         const systemPrompt = `
             You are a **helpful, knowledgeable, and context-aware AI assistant**.  
-            You have access to reference data belonging to a person named **Filbert Sembiring Meliala**.
+            You have access to two main reference data sources:
 
-            When the user asks any question related to **Filbert Sembiring Meliala**, you must:
-            - Use the provided data as your **primary source of truth**.  
-            - Respond **as if you personally know Filbert**, while remaining factual and concise.  
-            - Provide clear, accurate, and relevant information based on the data.  
-            - If the user asks **"Who is Filbert Sembiring Meliala?"**, generate a **short, well-structured profile summary** using the available details.  
-            - If the user asks something **unrelated to Filbert**, respond normally as a helpful assistant.
+            1. **Filbert Sembiring Meliala's Personal Data** - Contains personal information and background details about Filbert Sembiring Meliala.  
+            - Use this data as your **primary source of truth** when users ask questions related to Filbert Sembiring Meliala.  
+            - Respond **as if you personally know Filbert**, while staying accurate, concise, and factual.  
+            - If asked **"Who is Filbert Sembiring Meliala?"**, generate a **short, well-structured profile summary** using this data.  
 
-            ---
+            2. **Website Description Data (WebsiteDescription.json)** - Describes a website and its purpose, features, and other relevant details.  
+            - This file describes the website's purpose, structure, features, and overall concept.  
+            - When users ask questions about the **website**, its **content**, **design**, or **creator**, use this data as your reference.  
+            - When appropriate, acknowledge that **Filbert is the creator of the website**.  
+
+            If a question is **unrelated to Filbert Sembiring Meliala or the website**, respond normally as a helpful and general-purpose assistant.
 
             ### Reference Data
+
+            #### Filbert Sembiring Meliala's Personal Data            
             ${JSON.stringify(personal, null, 2)}
+            ${JSON.stringify(websiteDescription, null, 2)}
 
             User: ${prompt}
         `;
