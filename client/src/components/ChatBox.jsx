@@ -64,13 +64,13 @@ const ChatBox = () => {
     },[messages])
 
     return (
-        <div className='flex-1 flex flex-col justify-between m-5 md:mx-10 md:mt-10 md:mb-5 xl:mx-30 max-md:mt-14 2xl:pr-40'>
+        <main className='flex-1 flex flex-col justify-between m-5 md:mx-10 md:mt-10 md:mb-5 xl:mx-30 max-md:mt-14 2xl:pr-40'>
 
             {/* Chat Messages */}
             <div ref={containerRef} className='flex-1 mb-5 overflow-y-scroll'>
                 {messages.length === 0 && (
                     <div className='h-full flex flex-col items-center justify-center gap-2 text-primary'>
-                        <img src={theme === 'dark' ? assets.logo_full : assets.logo_full_dark} className='w-full max-w-56 sm:max-w-68' alt="" />
+                        <img src={theme === 'dark' ? assets.logo_full : assets.logo_full_dark} className='w-full max-w-56 sm:max-w-68' alt="TopGPT Full Brand Logo" />
                         <p className='mt-5 text-4xl sm:text-6xl text-center text-gray-400 dark:text-white'>Ask me anything.</p>
                     </div>
                 )}
@@ -94,13 +94,13 @@ const ChatBox = () => {
 
             {/* Prompt Input Box */}
             <form onSubmit={onSubmit} className='bg-primary/20 dark:bg-[#4A3728]/30 border border-primary dark:border-[#A68767]/30 rounded-full w-full max-w-2xl p-3 pl-4 mx-auto flex gap-4 items-center'>
-                <select onChange={(e)=>setMode(e.target.value)} value={mode} className='text-sm pl-3 pr-2 outline-none'>
+                <select onChange={(e)=>setMode(e.target.value)} value={mode} className='text-sm pl-3 pr-2 outline-none aria-label="Select Modality"'>
                     <option className='dark:bg-[#4A3728]' value="text">Text</option>
                     <option className='dark:bg-[#4A3728]' value="image">Image</option>
                 </select>
-                <input onChange={(e)=>setPrompt(e.target.value)} value={prompt} type="text" placeholder='Type your prompt here...' className='flex-1 w-full text-sm outline-none' required/>
-                <button disabled={loading}>
-                    <img src={loading ? assets.stop_icon : assets.send_icon} className='w-8 cursor-pointer'/>
+                <input onChange={(e)=>setPrompt(e.target.value)} value={prompt} type="text" placeholder='Type your prompt here...' className='flex-1 w-full text-sm outline-none' required aria-label="AI Prompt Input"/>
+                <button disabled={loading} aria-label={loading ? "Generating response..." : "Send Prompt"}>
+                    <img src={loading ? assets.stop_icon : assets.send_icon} className='w-8 cursor-pointer' alt="Submit Prompt Icon" />
                 </button>
             </form>
 
@@ -116,7 +116,7 @@ const ChatBox = () => {
                 
             </div>
 
-        </div>
+        </main>
     )
 }
 

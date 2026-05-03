@@ -12,29 +12,29 @@ const Header = () => {
     const { pathname } = useLocation()
 
     return(
-        <div className='flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-[#0F0E0E]/70'>
+        <header className='flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-[#0F0E0E]/70'>
 
-            <img src={theme === 'dark' ? assets.title_logo : assets.title_logo_dark} className='w-32 sm:w-40' alt="" />
+            <img src={theme === 'dark' ? assets.title_logo : assets.title_logo_dark} className='w-32 sm:w-40' alt="TopGPT Branding Logo" />
 
-            <div className={`text-gray-700 dark:text-white sm:text-sm ${!sidebarOpen ? 'max-sm:w-0 overflow-hidden' : 'max-sm:w-60 max-sm:pl-10'} max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col max-sm:bg-black max-sm:text-white max-sm:pt-20 flex sm:items-center gap-5 transition-all`}>
+            <nav className={`text-gray-700 dark:text-white sm:text-sm ${!sidebarOpen ? 'max-sm:w-0 overflow-hidden' : 'max-sm:w-60 max-sm:pl-10'} max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col max-sm:bg-black max-sm:text-white max-sm:pt-20 flex sm:items-center gap-5 transition-all`}>
 
-                <img src={assets.close_icon} className='w-5 absolute right-4 top-4 sm:hidden' onClick={() => setSidebarOpen(false)}/>
+                <img src={assets.close_icon} className='w-5 absolute right-4 top-4 sm:hidden' aria-label="Close navigation" onClick={() => setSidebarOpen(false)}/>
                 
                 <a href="#" onClick={() => setSidebarOpen(false)} className='sm:hover:border-b'>Home</a>
                 <a href="#creator" onClick={() => setSidebarOpen(false)} className='sm:hover:border-b'>Creator</a>
                 <a href="#contact-us" onClick={() => setSidebarOpen(false)} className='sm:hover:border-b'>Contact Us</a>
                 <Link to="/login" className='mt-auto mb-8 min-sm:hidden text-sm flex items-center gap-2 bg-primary text-black py-2 rounded-full cursor-pointer hover:scale-103 transition-all w-full -translate-x-4 justify-center'>Try TopGPT</Link>
-            </div>
+            </nav>
 
             <div className='flex items-center gap-2 sm:gap-4'>
                 <ThemeToggleBtn />
 
-                <img src={theme === 'dark' ? assets.menu_icon_darkh : assets.menu_iconh} alt="" onClick={() => setSidebarOpen(true)} className='w-8 sm:hidden'/>
+                <img src={theme === 'dark' ? assets.menu_icon_darkh : assets.menu_iconh} alt="Mobile Menu Icon" onClick={() => setSidebarOpen(true)} className='w-8 sm:hidden'/>
 
                 <Link to="/login" className='text-sm max-sm:hidden flex items-center gap-2 bg-primary text-black px-6 py-2 rounded-full cursor-pointer hover:scale-103 transition-all'>Try TopGPT</Link>
             </div>
 
-        </div>
+        </header>
     )
 }
 

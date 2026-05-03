@@ -1,17 +1,16 @@
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 
-
 const Footer = () => {
 
     const { theme } = useAppContext();
 
     return(
-        <div className='bg-slate-50 dark:bg-[#0F0E0E] pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40'>
+        <footer className='bg-slate-50 dark:bg-[#0F0E0E] pt-10 sm:pt-10 mt-20 sm:mt-40 px-4 sm:px-10 lg:px-24 xl:px-40'>
             {/* Footer Top */}
             <div className='flex justify-between lg:items-center max-lg:flex-col gap-10'>
                 <div className='space-y-5 text-sm text-gray-700 dark:text-white'>
-                    <img src={theme === 'dark' ? assets.title_logo : assets.title_logo_dark} className='w-32 sm:w-44' alt="" />
+                    <img src={theme === 'dark' ? assets.title_logo : assets.title_logo_dark} className='w-32 sm:w-44' alt="TopGPT Logo Footer" loading="lazy" />
                     <p className='max-w-md'>From strategy to execution, we craft digital solutions that move your business forward.</p>
 
                     <ul className='flex gap-8'>
@@ -20,15 +19,6 @@ const Footer = () => {
                         <li><a href="#contact-us" className='hover:text-primary'>Contact Us</a></li>                        
                     </ul>
                 </div>
-                {/* Right Side - Email Subscription */}
-                {/* <div className='text-gray-600 dark:text-white'>
-                    <h3 className='font-semibold'>Social Media</h3>                    
-                    <p className='text-sm mt-2 mb-6'>The latest news, articles, and resources, sent to your inbox weekly.</p>
-                    <div className='flex gap-2 text-sm'>
-                        <input type="email" placeholder='Enter your email' className='w-full p-3 text-sm outline-none rounded dark:text-gray-200 bg-transparent border border-gray-300 dark:border-gray-500' />
-                        <button className='bg-primary text-black rounded px-6'>Subscribe</button>
-                    </div>
-                </div> */}
             </div>
             <hr className='border-gray-300 dark:border-gray-600 my-6'/>
 
@@ -37,29 +27,17 @@ const Footer = () => {
                 <p>Copyright 2025 &copy; FilbertSM - All Right Reserved.</p>
                 <div className='flex items-center justify-between gap-4'>
                     <a href="https://github.com/FilbertSM" target="_blank" rel="noopener noreferrer">
-                        <img src={assets.github_icon} className='w-6 hover:scale-110 transition-all' alt="GitHub" />
+                        <img src={assets.github_icon} className='w-6 hover:scale-110 transition-all' alt="TopGPT Creator GitHub Profile" loading="lazy" />
                     </a>
                     <a href="https://linkedin.com/in/filbert-sembiring-meliala/" target="_blank" rel="noopener noreferrer">
-                        <img src={assets.linkedin_icon} className='hover:scale-110 transition-all' alt="LinkedIn" />
+                        <img src={assets.linkedin_icon} className='hover:scale-110 transition-all' alt="TopGPT Creator LinkedIn Profile" loading="lazy" />
                     </a>
                     <a href="https://www.instagram.com/filbertt_sm/" target="_blank" rel="noopener noreferrer">
-                        <img src={assets.instagram_icon} className='hover:scale-110 transition-all' alt="" />
+                        <img src={assets.instagram_icon} className='hover:scale-110 transition-all' alt="TopGPT Creator Instagram Profile" loading="lazy" />
                     </a>                
                 </div>
             </div>
-
-            {/* <ul className="">
-                        <li>
-                            <a href="https://github.com/FilbertSM" target="_blank" rel="noopener noreferrer" className="hover:text-primary">GitHub</a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/in/filbert-sembiring-meliala/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">LinkedIn</a>
-                        </li>                    
-                        <li>
-                            <a href="https://www.instagram.com/filbertt_sm/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Instagram</a>
-                        </li>
-                    </ul> */}
-        </div>
+        </footer>
     )
 }
 

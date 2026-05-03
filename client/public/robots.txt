@@ -1,0 +1,5 @@
+﻿User-agent: *
+Allow: /
+Disallow: /login
+
+Sitemap: https://topgpt-chi.vercel.app/sitemap.xml

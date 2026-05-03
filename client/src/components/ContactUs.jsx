@@ -27,7 +27,7 @@ const ContactUs = () => {
     };
 
     return(
-        <div id='contact-us' className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-20 text-gray-700 dark:text-white">
+        <section id='contact-us' className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-20 text-gray-700 dark:text-white">
             {/* <Title title='Reach out to us' desc='Reach out today to discuss your project needs and start collaborating on something amazing!' /> */}
             <div className='relative flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'>
                 <h2 className='text-3xl sm:text-5xl font-medium'>Reach out to us</h2>
@@ -38,14 +38,14 @@ const ContactUs = () => {
                 <div>
                     <p className='mb-2 text-sm font-medium'>Your Name</p>
                     <div className='flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600'>
-                        <img src={assets.person_icon} alt="" />
+                        <img src={assets.person_icon} alt="Person Icon" />
                         <input name="name" type="text" placeholder='Enter your name' className='w-full p-3 text-sm outline-none' required/>
                     </div>
                 </div>
                 <div>
                     <p className='mb-2 text-sm font-medium'>Your Name</p>
                     <div className='flex pl-3 rounded-lg border border-gray-300 dark:border-gray-600'>
-                        <img src={assets.email_icon} alt="" />
+                        <img src={assets.email_icon} alt="Email Icon" />
                         <input name="email" type="email" placeholder='Enter your email' className='w-full p-3 text-sm outline-none' required/>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const ContactUs = () => {
                     Submit
                 </button>
             </form>
-        </div>
+        </section>
     )
 }
 

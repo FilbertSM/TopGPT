@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { useAppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import { assets } from '../assets/assets';
+import SEO from '../components/SEO';
 
 const Login = () => {
 
@@ -33,8 +34,14 @@ const Login = () => {
   }
 
   return (
+    <>
+    <SEO 
+        title={`${state === 'login' ? 'Login' : 'Sign Up'} | TopGPT`} 
+        description="Login or register an account to start using TopGPT, the safest and most accurate AI assistant." 
+        url="https://topgpt-chi.vercel.app/login" 
+    />
     <div id='login' className='bg-[#151516] flex items-center justify-center h-screen w-screen flex-col'>
-        <img src={assets.title_logo} className='w-48 sm:w-64 mt-auto' alt="" />
+        <img src={assets.title_logo} className='w-48 sm:w-64 mt-auto' alt="TopGPT Logo" />
         
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-auto mx-auto mt-4 items-start p-8 py-12 w-80 sm:w-[352px] text-white rounded-lg shadow-xl border border-[#39393a] bg-[#0F0E0E]">
             <p className="text-2xl font-medium m-auto">
@@ -68,6 +75,7 @@ const Login = () => {
             </button>
         </form>
     </div>
+    </>
   )
 }
 

@@ -32,9 +32,9 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
   }
 
   return (
-    <div className={`flex flex-col h-screen min-w-72 p-5 dark:bg-gradient-to-b from-[#242124] to-[#000000]/30 border-r border-[#A68767]/30 backdrop-blur-3xl transition-all duration-500 max-md:absolute left-0 z-2 ${!isMenuOpen && 'max-md:-translate-x-full'}`}>
+    <aside className={`flex flex-col h-screen min-w-72 p-5 dark:bg-gradient-to-b from-[#242124] to-[#000000]/30 border-r border-[#A68767]/30 backdrop-blur-3xl transition-all duration-500 max-md:absolute left-0 z-2 ${!isMenuOpen && 'max-md:-translate-x-full'}`} aria-label="Sidebar Navigation">
       {/* Logo */}
-      <img src={theme === 'dark' ? assets.logo_full : assets.logo_full_dark} alt="" className='w-full max-w-48'/>
+      <img src={theme === 'dark' ? assets.logo_full : assets.logo_full_dark} alt="TopGPT Sidebar Logo" className='w-full max-w-48'/>
 
       {/* New Chat Button */}
       <button onClick={createNewChat} className='flex justify-center items-center w-full py-2 mt-10 text-black bg-gradient-to-r from-[#FFB974] to-[#F5D3AD] text-sm rounded-md cursor-pointer'>
@@ -43,7 +43,7 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
 
       {/* Search Conversation */}
       <div className='flex items-center gap-2 p-3 mt-4 border border-gray-400 dark:border-white/20 rounded-md'>
-        <img src={assets.search_icon} className='w-4 not-dark:invert' alt="" />
+        <img src={assets.search_icon} className='w-4 not-dark:invert' alt="Search Icon" />
         <input onChange={(e)=>setSearch(e.target.value)} value={search} type="text" placeholder='Search Conversations' className='text-xs placeholder:text-gray-400 outline-none'/>
       </div>
 
@@ -57,7 +57,7 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
                 <p className='truncate w-full'>{chat.messages.length > 0 ? chat.messages[0].content.slice(0,32) : chat.name}</p>
                 <p className='text-xs text-gray-500 dark:text-[#B1A6C0]'>{moment(chat.updatedAt).fromNow()}</p>
               </div>
-              <img onClick={e => toast.promise(deleteChat(e, chat._id), {loading: 'deleting...'})} src={assets.bin_icon} className='hidden group-hover:block w-4 cursor-pointer not-dark:invert' alt="" />
+              <img onClick={e => toast.promise(deleteChat(e, chat._id), {loading: 'deleting...'})} src={assets.bin_icon} className='hidden group-hover:block w-4 cursor-pointer not-dark:invert' alt="Delete Chat" />
             </div>
           ))
         }
@@ -65,7 +65,7 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
 
       {/* Community Images */}
       <div onClick={()=>{navigate('/community'); setIsMenuOpen(false)}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md cursor-pointer hover:scale-103 transition-all'>
-        <img src={assets.gallery_icon} className='w-4.5 not-dark:invert' alt="" />
+        <img src={assets.gallery_icon} className='w-4.5 not-dark:invert' alt="Community Gallery Icon" />
         <div className='flex flex-col text-sm'>
           <p>Community Images</p>
         </div>
@@ -73,7 +73,7 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
 
       {/* Credit Purchase Option */}
       <div onClick={()=>{navigate('/credits'); setIsMenuOpen(false)}} className='flex items-center gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md cursor-pointer hover:scale-103 transition-all'>
-        <img src={assets.diamond_icon} className='w-4.5 dark:invert' alt="" />
+        <img src={assets.diamond_icon} className='w-4.5 dark:invert' alt="Credits Icon" />
         <div className='flex flex-col text-sm'>
           <p>Credits : {user?.credits}</p>
           <p className='text-xs text-gray-400'>Purchase credits to use TopGPT</p>
@@ -83,10 +83,10 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
       {/* Dark Mode Toggle */}
       <div className='flex items-center justify-between gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md'>
         <div className='flex items-center gap-2 text-sm'>
-          <img src={assets.theme_icon} className="w-4 not-dark:invert" alt="" />
+          <img src={assets.theme_icon} className="w-4 not-dark:invert" alt="Theme Toggle Icon" />
           <p>Dark Mode</p>
         </div>
-      <label className="relative inline-flex cursor pointer">
+      <label className="relative inline-flex cursor pointer" aria-label="Toggle Dark Mode">
         <input onClick={()=>setTheme(theme === 'dark' ? 'light' : 'dark')} type="checkbox" className='sr-only peer' checked={theme === 'dark'}/>
         <div className='w-9 h-5 bg-gray-400 rounded-full peer-checked:bg-[#4A3728] transition-all'>
         </div>
@@ -96,14 +96,14 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
 
       {/* User Account */}
       <div className='flex items-center gap-3 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md cursor-pointer group'>
-        <img src={assets.user_icon} className='w-7 rounded-full' alt="" />
+        <img src={assets.user_icon} className='w-7 rounded-full' alt="User Default Avatar" />
         <p className='flex-1 text-sm dark:text-primary truncate'>{user ? user.name : 'Login your account'}</p>
-        {user && <img onClick={logout} src={assets.logout_icon} className='h-5 cursor-pointer hidden not-dark:invert group-hover:block'/>}
+        {user && <img onClick={logout} src={assets.logout_icon} alt="Logout button" className='h-5 cursor-pointer hidden not-dark:invert group-hover:block'/>}
       </div>
 
-      <img onClick={()=>setIsMenuOpen(false)} src={assets.close_icon} className='absolute top-3 right-3 w-5 h-5 cursor-pointer md:hidden not-dark:invert' alt="" />
+      <img onClick={()=>setIsMenuOpen(false)} src={assets.close_icon} className='absolute top-3 right-3 w-5 h-5 cursor-pointer md:hidden not-dark:invert' alt="Close navigation" />
 
-    </div>
+    </aside>
   )
 }
 

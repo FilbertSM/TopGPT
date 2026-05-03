@@ -35,11 +35,16 @@ export const getPlans = async (req, res) => {
     }
 }
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+// Ensure STRIPE_SECRET_KEY is initialized safely
+const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
 
 // API Controller for purchasing a plan
 export const purchasePlan = async (req, res) => {
     try {
+        if(!stripe) {
+            return res.json({success: false, message: "Stripe configuration is missing on the server."})
+        }
+
         const { planId } = req.body
         const userId = req.user._id
         const plan = plans.find(plan => plan._id === planId)
@@ -48,7 +53,7 @@ export const purchasePlan = async (req, res) => {
             return res.json({success: false, message: "Invalid Plan"})
         }
 
-        // Create new Transaction
+        // Create new Transaction (Unpaid initially)
         const transaction = await Transaction.create({
             userId,
             planId: plan._id,
@@ -56,14 +61,6 @@ export const purchasePlan = async (req, res) => {
             credits: plan.credits,
             isPaid: false
         })
-
-        // Update credits in user account (without verification)
-        await User.updateOne(
-            { _id: transaction.userId },
-            { $inc: { credits: transaction.credits } }
-        );
-        transaction.isPaid = true;
-        await transaction.save();
 
         const { origin } = req.headers
         
