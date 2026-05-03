@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./client/public/metadata.png" alt="TopGPT Banner" width="100%">
+  <img src="./client/src/assets/hero_img.png" alt="TopGPT Banner" width="100%">
   
   <br />
   <br />
