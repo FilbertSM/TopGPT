@@ -1,16 +1,38 @@
-# React + Vite
+## 🌐 TopGPT Client / Frontend Layer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend artifact of TopGPT, engineered for speed and accessibility using React 19, Tailwind CSS v4, and Vite. 
 
-Currently, two official plugins are available:
+This client acts as the central interface connecting users to the AI infrastructure. It is designed heavily around React `Suspense` borders and dynamic code splitting to ensure the underlying bundle sizes remain tiny during initial page requests.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🛠️ Tech Stack 
 
-## React Compiler
+- **Framework**: React.js 19
+- **Bundler**: Vite
+- **Styling**: Tailwind CSS v4
+- **Routing**: React Router DOM v7
+- **SEO Optimization**: React Helmet Async
+- **HTTP Client**: Axios
+- **State/Notifications**: React Context API, React Hot Toast
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ⚡ Key Implementations
 
-## Expanding the ESLint configuration
+- **Dynamic Lazy Loading**: Routes such as `/community`, `/credits`, and `/login` are wrapped inside `React.lazy()` imports. This prevents massive JavaScript blocking issues on the main thread during Time to Interactive (TTI) profiling.
+- **Dynamic SEO Injection**: The `<SEO />` component alters document heads, canonical URLs, and Open Graph parameters deterministically through the React Router lifecycle, vastly improving crawler indexing.
+- **Accessibility (a11y) First**: Extensive use of Semantic HTML (`<main>`, `<aside>`, `<header>`, `<footer>`), `aria-labels`, and defensive `alt` tags on external community images.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ⚙️ Local Development
+
+1. Create a `.env` file in the `/client` directory (Vite requires variables prefixed with `VITE_`):
+   ```env
+   VITE_BACKEND_URL="http://localhost:3000"
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for Production:
+   ```bash
+   npm run build
+   ```
