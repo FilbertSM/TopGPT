@@ -4,7 +4,7 @@
   <br />
   <br />
 
-  # 🌟 TopGPT (Project Gaia 2.0)
+  # 🌟 TopGPT
   **The Next Generation AI Assistant Ecosystem**
 
   [![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
@@ -21,7 +21,7 @@
 
 ## 📖 Overview
 
-**TopGPT** (internally known as Project Gaia 2.0) is a comprehensive AI assistant platform designed to unify powerful text-generation and image-generation capabilities within a singular, highly optimized interface. Built with the MERN stack (MongoDB, Express, React, Node.js), TopGPT allows users to seamlessly branch conversational logic, prompt complex text models, and generate high-fidelity AI imagery. 
+**TopGPT** is a comprehensive AI assistant platform designed to unify powerful text-generation and image-generation capabilities within a singular, highly optimized interface. Built with the MERN stack (MongoDB, Express, React, Node.js), TopGPT allows users to seamlessly branch conversational logic, prompt complex text models, and generate high-fidelity AI imagery. 
 
 A core feature is the **TopGPT Community Page**, serving as a public gallery where users can publish their best AI-generated visual content directly from the chat interface.
 
@@ -46,7 +46,7 @@ The repository follows a strict monorepo-style structure separating the frontend
 
 ### Directory Structure
 ```text
-gaia-2.0/
+topgpt/
 ├── client/           # React 19 Frontend Environment (Vite)
 └── server/           # Node.js + Express Backend Services
 ```
@@ -71,8 +71,8 @@ Clone the repository and install dependencies sequentially.
 
 ```bash
 # Clone the repository
-git clone https://github.com/FilbertSM/gaia-2.0.git
-cd gaia-2.0
+git clone https://github.com/FilbertSM/topgpt.git
+cd topgpt
 
 # Install Server dependencies
 cd server
