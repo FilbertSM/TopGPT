@@ -11,12 +11,12 @@ import Title from './components/Title'
 import Creator from './components/Creator'
 import ContactUs from './components/ContactUs'
 
-const Credits = React.lazy(() => import('./pages/Credits'))
-const Community = React.lazy(() => import('./pages/Community'))
-const Landing = React.lazy(() => import('./pages/Landing'))
-const Header = React.lazy(() => import('./pages/Header'))
-const Footer = React.lazy(() => import('./pages/Footer'))
-const Login = React.lazy(() => import('./pages/Login'))
+import Credits from './pages/Credits'
+import Community from './pages/Community'
+import Landing from './pages/Landing'
+import Header from './pages/Header'
+import Footer from './pages/Footer'
+import Login from './pages/Login'
 
 const App = () => {
 
