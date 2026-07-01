@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { useAppContext } from '../context/AppContext'
 import ThemeToggleBtn from '../components/ThemeToggleBtn'
+import { premiumScroll } from '../utils/scroll'
 
 const Header = () => {
 
@@ -20,9 +21,13 @@ const Header = () => {
 
                 <img src={assets.close_icon} className='w-5 absolute right-4 top-4 sm:hidden' aria-label="Close navigation" onClick={() => setSidebarOpen(false)}/>
                 
-                <a href="#" onClick={() => setSidebarOpen(false)} className='sm:hover:border-b'>Home</a>
-                <a href="#creator" onClick={() => setSidebarOpen(false)} className='sm:hover:border-b'>Creator</a>
-                <a href="#contact-us" onClick={() => setSidebarOpen(false)} className='sm:hover:border-b'>Contact Us</a>
+                <a href="#" onClick={(e) => { setSidebarOpen(false); premiumScroll(e, "home"); }} className='sm:hover:border-b'>Home</a>
+                <a href="#features" onClick={(e) => { setSidebarOpen(false); premiumScroll(e, "features"); }} className='sm:hover:border-b'>Capabilities</a>
+                <a href="#playground" onClick={(e) => { setSidebarOpen(false); premiumScroll(e, "playground"); }} className='sm:hover:border-b'>Simulator</a>
+                <a href="#pricing" onClick={(e) => { setSidebarOpen(false); premiumScroll(e, "pricing"); }} className='sm:hover:border-b'>Pricing</a>
+                <a href="#community" onClick={(e) => { setSidebarOpen(false); premiumScroll(e, "community"); }} className='sm:hover:border-b'>Art Feed</a>
+                <a href="#creator" onClick={(e) => { setSidebarOpen(false); premiumScroll(e, "creator"); }} className='sm:hover:border-b'>Creator</a>
+                <a href="#contact-us" onClick={(e) => { setSidebarOpen(false); premiumScroll(e, "contact-us"); }} className='sm:hover:border-b'>Contact Us</a>
                 <Link to="/login" className='mt-auto mb-8 min-sm:hidden text-sm flex items-center gap-2 bg-primary text-black py-2 rounded-full cursor-pointer hover:scale-103 transition-all w-full -translate-x-4 justify-center'>Try TopGPT</Link>
             </nav>
 

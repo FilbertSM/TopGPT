@@ -1,5 +1,6 @@
 import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
+import { premiumScroll } from "../utils/scroll";
 
 const Footer = () => {
 
@@ -14,9 +15,13 @@ const Footer = () => {
                     <p className='max-w-md'>From strategy to execution, we craft digital solutions that move your business forward.</p>
 
                     <ul className='flex gap-8'>
-                        <li><a href="#home" className='hover:text-primary'>Home</a></li>
-                        <li><a href="#creator" className='hover:text-primary'>Creator</a></li>                    
-                        <li><a href="#contact-us" className='hover:text-primary'>Contact Us</a></li>                        
+                        <li><a href="#home" onClick={(e) => premiumScroll(e, "home")} className='hover:text-primary'>Home</a></li>
+                        <li><a href="#features" onClick={(e) => premiumScroll(e, "features")} className='hover:text-primary'>Capabilities</a></li>
+                        <li><a href="#playground" onClick={(e) => premiumScroll(e, "playground")} className='hover:text-primary'>Simulator</a></li>
+                        <li><a href="#pricing" onClick={(e) => premiumScroll(e, "pricing")} className='hover:text-primary'>Pricing</a></li>
+                        <li><a href="#community" onClick={(e) => premiumScroll(e, "community")} className='hover:text-primary'>Art Feed</a></li>
+                        <li><a href="#creator" onClick={(e) => premiumScroll(e, "creator")} className='hover:text-primary'>Creator</a></li>                    
+                        <li><a href="#contact-us" onClick={(e) => premiumScroll(e, "contact-us")} className='hover:text-primary'>Contact Us</a></li>                        
                     </ul>
                 </div>
             </div>

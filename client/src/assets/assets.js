@@ -26,7 +26,7 @@ import github_icon from "./github_icon.svg";
 import linkedin_icon from "./linkedin_icon.svg";
 import instagram_icon from "./instagram_icon.svg";
 import hero_img from "./hero_img.png";
-import hero_profile_img from "./hero_profile_img.png";
+import hero_profile_img from "./hero_profile_img.jpg";
 
 import ai_image1 from "./ai_image1.jpg";
 import ai_image2 from "./ai_image2.jpg";
